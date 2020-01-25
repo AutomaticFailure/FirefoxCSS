@@ -1,0 +1,513 @@
+/* Firefox Quantum userChrome.css tweaks ********************************************************/
+/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **********/
+/* Github: https://github.com/aris-t2/customcssforfx ********************************************/
+/************************************************************************************************/
+
+/************************************************************************************************/
+/* Custom CSS for Firefox 59+ *******************************************************************/
+/* version 1.8.5 ********************************************************************************/
+/************************************************************************************************/
+
+/* GENERAL VARIABLES ****************************************************************************/
+/* [!] set global variables for font and tab size options and more inside target file ***********/
+@import url(./config/general_variables.css); /**/
+
+/* COLOR VARIABLES FOR DEFAULT BROWSER THEME ONLY - MAIN UI - only use one at a time ************/
+/* [!] set own colors for tabs & toolbars inside 'color_variables.css' or use available presets */
+@import url(./config/color_variables.css); /**/  /* <- default 'grey' colors */
+
+/************************************************************************************************/
+/* TOOLBAR BUTTONS ******************************************************************************/
+/************************************************************************************************/
+
+/* bookmarks toolbar - buttons appearance - only use one at a time ******************************/
+/* old bookmarks toolbar button appearance ******************************************************/
+@import url(./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css); /**/
+
+/* bookmarks menu button - 'button & popup' appearance ******************************************/
+@import url(./css/buttons/bookmarks_menu_button_localized_label_on_bookmarks_toolbar.css); /**/
+
+/* popup appearance *****************************************************************************/
+@import url(./css/buttons/bookmarks_menu_button_popup_classic_appearance.css); /**/
+
+/************************************************************************************************/
+/* APPLICATION/HAMBURGER BUTTON *****************************************************************/
+/************************************************************************************************/
+
+/* application/hamburger button popup ***********************************************************/
+@import url(./css/buttons/appbutton_popup_icons_colorized.css); /**/
+@import url(./css/buttons/appbutton_popup_sync_hidden.css); /**/
+
+/************************************************************************************************/
+/* TABS - appearance and position ***************************************************************/
+/************************************************************************************************/
+
+/* restore empty/missing tab favicon - only use one at a time ***********************************/
+@import url(./css/tabs/missing_tab_favicon_restored_globe_v2.css); /**/
+
+/* tab close icon settings - only use one at a time *********************************************/
+@import url(./css/tabs/tab_close_always_visible.css); /**/
+
+/* other tab settings ***************************************************************************/
+@import url(./css/tabs/tab_icon_colors.css); /**/
+
+/************************************************************************************************/
+/* GENERAL UI ***********************************************************************************/
+/************************************************************************************************/
+
+@import url(./css/generalui/private_mode_indicator_hidden.css); /**/
+@import url(./css/generalui/bookmark_icons_colorized.css); /**/
+@import url(./css/generalui/popup_animation_fade_time_reduced.css); /**/
+
+/* findbar **************************************************************************************/
+@import url(./css/generalui/findbar_on_top.css); /**/
+
+/* menuitem labels - only use one at a time *****************************************************/
+@import url(./css/generalui/context_bfrsb_labels_without_icons.css); /**/
+
+/* SEARCHBAR ************************************************************************************/
+@import url(./css/generalui/searchbar_glassplus_indicator_hidden.css); /**/
+
+/************************************************************************************************/
+/* TOOLBARS *************************************************************************************/
+/************************************************************************************************/
+ 
+/* GENERAL TOOLBAR SETTINGS *********************************************************************/
+@import url(./css/toolbars/toolbars_old_padding.css); /**/
+@import url(./css/toolbars/tabs_toolbar_adjustments.css); /**/
+
+/* BOOKMARKS TOOLBAR ****************************************************************************/
+@import url(./css/toolbars/bookmarks_toolbar_old_height.css); /**/
+
+/* TOOLBAR COLORS *******************************************************************************/
+@import url(./css/toolbars/general_toolbar_colors.css); /**/
+
+/************************************************************************************************/
+/* LOCATION BAR *********************************************************************************/
+/************************************************************************************************/
+
+/* general location bar tweaks ******************************************************************/
+@import url(./css/locationbar/locationbar_adjustments.css); /**/
+@import url(./css/locationbar/compact_mode_reduce_fontsize.css); /**/
+@import url(./css/locationbar/identitybox_labels_hidden.css); /**/
+
+@import url(./css/locationbar/identitybox_padlock_icon_hidden.css); /**/
+
+/* additional icons/buttons and tweaks for third party page action buttons **********************/
+@import url(./css/locationbar/icons_colorized.css); /**/
+
+/* page action button (three dots) / separator **************************************************/
+@import url(./css/locationbar/pageaction_separator_in_location_bar_hidden.css); /**/
+@import url(./css/locationbar/pageaction_button_in_location_bar_hidden.css); /**/
+
+/* star button **********************************************************************************/
+@import url(./css/locationbar/starbutton_is_last_pageaction_button.css); /**/
+
+/************************************************************************************************/
+/* LOCATION BAR - 'autocomplete popup' appearance ***********************************************/
+/************************************************************************************************/
+
+/* custom amount of result items: about:config > browser.urlbar.maxRichResults ******************/
+@import url(./css/locationbar/ac_popup_custom_height.css); /**/
+
+/* hide 'Search with...' and 'Visit...' results *************************************************/
+@import url(./css/locationbar/ac_popup_searchwith_and_visit_items_hidden.css); /**/  /* <--- EXPERIMENTAL */
+
+/************************************************************************************************/
+/* Create a new file "my_userChrome.css" and add own/custom code to it. *************************/
+/* @import url(./my_userChrome.css); /**/
+/************************************************************************************************/
+
+/* OTHER */
+
+/* OVERLAY SCROLLBAR (REQUIRES USERCHROME.JS AND USERCHROME.XML */
+
+/*hbox#fullscr-toggler {
+    -moz-binding: url(data:text/plain;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjwhLS0gQ29weXJpZ2h0IChjKSAyMDE3IEhhZ2dhaSBOdWNoaQpBdmFpbGFibGUgZm9yIHVzZSB1bmRlciB0aGUgTUlUIExpY2Vuc2U6Cmh0dHBzOi8vb3BlbnNvdXJjZS5vcmcvbGljZW5zZXMvTUlUCiAtLT4KCjwhLS0gUnVuIHVzZXJDaHJvbWUuanMvdXNlckNocm9tZS54dWwgYW5kIC51Yy5qcy8udWMueHVsLy5jc3MgZmlsZXMgIC0tPgo8YmluZGluZ3MgeG1sbnM9Imh0dHA6Ly93d3cubW96aWxsYS5vcmcveGJsIj4KICAgIDxiaW5kaW5nIGlkPSJqcyI+CiAgICAgICAgPGltcGxlbWVudGF0aW9uPgogICAgICAgICAgICA8Y29uc3RydWN0b3I+PCFbQ0RBVEFbCiAgICAgICAgICAgICAgICBpZih3aW5kb3cudXNlckNocm9tZUpzTW9kKSByZXR1cm47CiAgICAgICAgICAgICAgICB3aW5kb3cudXNlckNocm9tZUpzTW9kID0gdHJ1ZTsKCiAgICAgICAgICAgICAgICB2YXIgY2hyb21lRmlsZXMgPSBGaWxlVXRpbHMuZ2V0RGlyKCJVQ2hybSIsIFtdKS5kaXJlY3RvcnlFbnRyaWVzOwogICAgICAgICAgICAgICAgdmFyIHh1bEZpbGVzID0gW107CiAgICAgICAgICAgICAgICB2YXIgc3NzID0gQ2NbJ0Btb3ppbGxhLm9yZy9jb250ZW50L3N0eWxlLXNoZWV0LXNlcnZpY2U7MSddLmdldFNlcnZpY2UoQ2kubnNJU3R5bGVTaGVldFNlcnZpY2UpOwoKICAgICAgICAgICAgICAgIHdoaWxlKGNocm9tZUZpbGVzLmhhc01vcmVFbGVtZW50cygpKSB7CiAgICAgICAgICAgICAgICAgICAgdmFyIGZpbGUgPSBjaHJvbWVGaWxlcy5nZXROZXh0KCkuUXVlcnlJbnRlcmZhY2UoQ2kubnNJRmlsZSk7CiAgICAgICAgICAgICAgICAgICAgdmFyIGZpbGVVUkkgPSBTZXJ2aWNlcy5pby5uZXdGaWxlVVJJKGZpbGUpOwoKICAgICAgICAgICAgICAgICAgICBpZihmaWxlLmlzRmlsZSgpKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAibm9uZSI7CiAgICAgICAgICAgICAgICAgICAgICAgIGlmKC8oXnVzZXJDaHJvbWV8XC51YylcLmpzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcmNocm9tZS9qcyI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvKF51c2VyQ2hyb21lfFwudWMpXC54dWwkL2kudGVzdChmaWxlLmxlYWZOYW1lKSkgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZSA9ICJ1c2VyY2hyb21lL3h1bCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXC5hc1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAiYWdlbnRzaGVldCI7CiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZigvXig/ISh1c2VyQ2hyb21lfHVzZXJDb250ZW50KVwuY3NzJCkuK1wuY3NzJC9pLnRlc3QoZmlsZS5sZWFmTmFtZSkpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAidXNlcnNoZWV0IjsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBpZih0eXBlICE9ICJub25lIikgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS1cXCAiICsgZmlsZS5sZWFmTmFtZSArICIgKCIgKyB0eXBlICsgIikiKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYodHlwZSA9PSAidXNlcmNocm9tZS9qcyIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZXMuc2NyaXB0bG9hZGVyLmxvYWRTdWJTY3JpcHRXaXRoT3B0aW9ucyhmaWxlVVJJLnNwZWMsIHt0YXJnZXQ6IHdpbmRvdywgaWdub3JlQ2FjaGU6IHRydWV9KTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2VyY2hyb21lL3h1bCIpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgeHVsRmlsZXMucHVzaChmaWxlVVJJLnNwZWMpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbHNlIGlmKHR5cGUgPT0gImFnZW50c2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5BR0VOVF9TSEVFVCkpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzc3MubG9hZEFuZFJlZ2lzdGVyU2hlZXQoZmlsZVVSSSwgc3NzLkFHRU5UX1NIRUVUKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZih0eXBlID09ICJ1c2Vyc2hlZXQiKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFzc3Muc2hlZXRSZWdpc3RlcmVkKGZpbGVVUkksIHNzcy5VU0VSX1NIRUVUKSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNzcy5sb2FkQW5kUmVnaXN0ZXJTaGVldChmaWxlVVJJLCBzc3MuVVNFUl9TSEVFVCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSBjYXRjaChlKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIiMjIyMjIyMjIyMgRVJST1I6ICIgKyBlICsgIiBhdCAiICsgZS5saW5lTnVtYmVyICsgIjoiICsgZS5jb2x1bW5OdW1iZXIpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS0vICIgKyBmaWxlLmxlYWZOYW1lKTsKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uIGxvYWRYVUwoKSB7CiAgICAgICAgICAgICAgICAgICAgaWYoeHVsRmlsZXMubGVuZ3RoID4gMCkgewogICAgICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5sb2FkT3ZlcmxheSh4dWxGaWxlcy5zaGlmdCgpLCBudWxsKTsKICAgICAgICAgICAgICAgICAgICAgICAgc2V0VGltZW91dChsb2FkWFVMLCA1KTsKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9LCAwKTsKICAgICAgICAgICAgXV0+PC9jb25zdHJ1Y3Rvcj4KICAgICAgICA8L2ltcGxlbWVudGF0aW9uPgogICAgPC9iaW5kaW5nPgo8L2JpbmRpbmdzPgo=);
+} */
+
+/* TITLE BAR BACKGROUND COLOR */
+:root:not(:-moz-window-inactive) #TabsToolbar {
+    background: #0c0c0d !important;
+}
+
+
+/* MOVE HAMBURGER (PANEL-UI) TO TOP LEFT*/
+/*#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow { 
+  -moz-box-ordinal-group: 0 !important;
+} */
+
+#PanelUI-button {
+  -moz-box-ordinal-group: 0;
+  border-left: none !important;
+  position: absolute;
+}
+
+:root[uidensity=compact] #PanelUI-button {
+  margin-top: 0px;
+  margin-left: 5px;
+}
+
+#PanelUI-button {
+  margin-top: -30px;
+}
+
+
+/* TABS */
+
+/* REMOVE SPACE BEFORE TABS */
+.titlebar-spacer[type='pre-tabs'] {
+  display: none !important;
+}
+
+/* BOLD ACTIVE TAB TEXT */
+#TabsToolbar .tabbrowser-tab[selected] {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* ACTIVE TAB TOP LINE */
+.tab-line[selected=true] {
+  background-color: #323234 !important
+}
+
+/* INACTIVE TAB HOVER */
+.tab-background:not([selected=true]),
+.tab-line:not([selected=true]) {
+    background-color: #3232324 !important;
+}
+
+/* INACTIVE TAB TOP LINE */
+.tab-line:not([selected=true]) {
+  background-color: #252526 !important
+}
+
+/* TAB SEPARATOR REMOVED */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  border-left: none !important;
+}
+
+/* 1PX BORDER ON FIRST TAB - LEFT */
+.titlebar-spacer {
+    border-right: none !important;
+}
+
+/* NO TAB OVERFLOW */
+.tabbrowser-tab {
+  min-width: 1em !important;
+  clip-width: 1em !important;
+}
+
+/* INACTIVE TAB 1PX LINE */
+#nav-bar {
+   box-shadow: none !important;
+}
+
+/* REMOVE PADDING ABOVE TABBAR */
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: initial !important;
+} 
+
+/* URL */
+#urlbar-input {
+    margin-left: 5px !important;
+}
+
+/* Constrains urlbar popup to urlbar width */
+/* Firefox 70+ */
+#urlbar-container{
+	transform: translateY(0);
+	position: relative;
+	z-index: 10;
+	padding-block: 3px !important;
+  padding-inline: 0px !important;
+  margin-inline: 5px !important;
+}
+#nav-bar-customization-target{ overflow: visible !important }
+#urlbar-results{ max-width: 100% !important; }
+.urlbarView{
+  top: calc(100% - 5px) !important;
+  width: 100%;
+  border-width: 0 1px 1px 1px !important;;
+  border-style: solid;
+  border-color: inherit !important;
+}
+:root[uidensity="compact"] .urlbarView { margin-top: 2px }
+:root[uidensity="touch"] .urlbarView { margin-top: 1px }
+#urlbar[open]{ border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; }
+.urlbarView-row{ padding: 6px 0px !important; }
+
+/* REMOVE IDENTITY BOX */
+#identity-box,
+#tracking-protection-icon-container,
+#blocked-permissions-container {
+  display: none !important;
+}
+
+/*USE THIS ONE*/
+/*#identity-box {
+  max-width: 0px !important;
+  border-inline-end: none !important;
+  display: none !important;
+}
+
+/* #tracking-protection-icon-animatable-box {
+  max-width: 0 !important;
+  border-inline-end: none !important;
+  display: none !important;
+} 
+
+#tracking-protection-icon-box { 
+  max-width: 0 !important;
+  border-inline-end: none !important;
+  display: none !important;
+} */
+
+/*USE THESE 3*/
+/*#tracking-protection-icon-container {
+  max-width: 0px !important;
+  border-inline-end: none !important;
+  display: none !important;
+} 
+
+#tracking-protection-icon-container {
+  border: -0px solid transparent !important;
+}
+
+#blocked-permissions-container {
+  Max-width: 0px !important;
+  border-inline-end: none !important;
+  display: none !important;
+} */
+
+/* AUTO HIDE IDENTITY BOX*/
+/*#identity-box{
+  max-width: 0 !important;
+  margin-left: 0px;
+	visibility: hidden;
+	transition:0s all 2s;
+}
+
+#identity-box:hover{
+  margin-left: 100px;
+	visibility: visible;
+	transition:0s all 2s;
+} */
+
+
+/* HIDE DROPMAKER BUTTON IN URL BAR */
+#pageActionButton {
+    display: none !important;
+}
+
+.urlbar-history-dropmarker {
+    display: none !important;
+}
+
+#pageActionSeparator {
+    display: none !important;
+}
+
+#reader-mode-button {
+    transform: translateX(0px) !important;
+}
+
+
+/* URL BAR BORDER */
+#urlbar[focused] {
+    border: 1px solid transparent !important;
+}
+#urlbar {
+    border: 1px solid transparent !important;
+}
+
+/* URL SUGGESTIONS MINIMUM HEIGHT */
+panel#PopupAutoCompleteRichResult .autocomplete-richlistitem {
+     min-height: 20px !important;
+}
+
+/* URL AUTOCOMPLETE POPUP COLOR */
+.autocomplete-richlistitem[selected=true],
+.searchbar-treebody::-moz-tree-row(selected) {
+  background-color: #252526 !important
+}
+.autocomplete-history-popup,
+panel[type=autocomplete-richlistbox],
+panel[type=autocomplete] {
+  color: #fff !important;
+  background: #323234 !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: #323234 !important;
+  border-right: #323234 !important;
+}
+.searchbar-treebody::-moz-tree-row(hover),
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem:hover,
+treechildren.searchbar-treebody::-moz-tree-row(hover) {
+  background-color: #252526 !important
+}
+
+/* HOVER INDICATOR COLOR */
+.toolbarbutton-1{
+   --toolbarbutton-hover-background: #252526 !important; 
+   --toolbarbutton-active-background: #252526 !important;
+}
+
+/* MOVE HAMBURGER MENU AND GAIN SPACE BEFORE TABS TOOLBAR */
+/* #main-window[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar{
+  -moz-padding-start: 35px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar{
+  -moz-padding-start: 34px !important;
+} */
+
+#main-window[uidensity=compact][tabsintitlebar] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar{
+  -moz-padding-start: 0px !important;
+}
+
+#main-window[uidensity=compact][tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar{
+  -moz-padding-start: 38px !important;
+}
+
+#main-window[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  -moz-appearance: none !important;
+  -moz-box-ordinal-group: 0 !important;
+  position: fixed !important;
+  height: 22px !important;
+  margin: 0 !important;
+  -moz-margin-start: -1px !important;
+  border: unset !important;
+  box-shadow: unset !important;
+  padding-left: 3px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  top: 1px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  top: 8px !important;
+} 
+
+/* @media (min-resolution: 110dpi) {
+	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+	  top: 6px !important;
+	}
+}
+
+@media (min-resolution: 120dpi) {
+	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+	  top: 5px !important;
+	}
+}
+
+@media (min-resolution: 140dpi) {
+	#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+	  top: 0px !important;
+	}
+	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+	  top: 4px !important;
+	}
+}
+
+@media (min-resolution: 160dpi) {
+	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+	  top: 2px !important;
+	}
+} */
+
+#main-window[tabsintitlebar][inFullscreen] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  top: 0px !important;
+} 
+
+/* HIDE BUTTON IN FULLSCREEN MODE, IF TOOLABRS GET AUTOMATICALLY HIDDEN */
+#main-window[tabsintitlebar] #navigator-toolbox[inFullscreen="true"][style*="margin-top: -"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  visibility: collapse !important;
+}
+ 
+/* MENU */
+/* MOVE POPUP ARROW AND POSITION */
+ #appMenu-popup {
+        margin-right: -256px !important;
+    }
+
+    #appMenu-popup .panel-arrow {
+        margin-right: 246px !important;
+    } 
+	
+/* MINIMIZE WHITE FLASH */
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: #323234 !important
+}
+
+#tabbrowser-tabpanels{
+  background-color: #323234 !important;
+}
+
+/* REMOVE URL IN CORNER */
+/*statuspanel[type="overLink"] .statuspanel-label {
+  display: none !important;
+}
+statuspanel { 
+  display: none !important; 
+}
+statuspanel[type="status"] .statuspanel-label[value^="Looking"] { 
+  display: none !important; 
+}
+statuspanel[type="status"] .statuspanel-label[value^="Connect"] { 
+  display: none !important; 
+}
+statuspanel[type="status"] .statuspanel-label[value^="Waiting"] { 
+  display: none !important; 
+}
+statuspanel[type="status"] .statuspanel-label[value^="Transfer"] {
+  display: none !important; 
+} */
+
+/* Move URL IN CORNER*/
+#statuspanel #statuspanel-label {
+    -moz-appearance: none !important;
+    background-color: #1f1f1f !important;
+   /* font-family: "Fira Sans" !important;
+    font-size-adjust: inherit !important; /* size font by default */
+    font-weight: thin !important;
+    color: dodgerblue !important;
+    border: 0px solid #1f1f1f !important;
+}
+
+#statuspanel {
+    /*background-color: transparent !important;*/
+    border: none !important;
+    bottom: 0px !important;
+    height: 0px !important;
+    max-width: 45% !important;
+    transition: none !important;
+}
+
+/* If you're not on the latest Nightly, 
+    change the #statuspanel-inner to .statuspanel-inner 
+*/
+
+statuspanel #statuspanel-inner {
+    background: transparent !important;
+    border: none !important;
+    height: 20px !important;
+}
+
+/* If you're not on the latest Nightly,
+    change the #statuspanel-label to .statuspanel-label
+*/
+
+statuspanel #statuspanel-label {
+    background-color: transparent !important;
+    border: none !important;
+}
