@@ -91,7 +91,7 @@
 @import url(./css/locationbar/compact_mode_reduce_fontsize.css); /**/
 @import url(./css/locationbar/identitybox_labels_hidden.css); /**/
 
-@import url(./css/locationbar/identitybox_padlock_icon_hidden.css); /**/
+/*@import url(./css/locationbar/identitybox_padlock_icon_hidden.css); /**/
 
 /* additional icons/buttons and tweaks for third party page action buttons **********************/
 @import url(./css/locationbar/icons_colorized.css); /**/
@@ -211,6 +211,7 @@
 } 
 
 /* URL */
+/* MOVE URL TEXT INPUT */
 #urlbar-input {
     margin-left: 5px !important;
 }
@@ -239,63 +240,29 @@
 #urlbar[open]{ border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; }
 .urlbarView-row{ padding: 6px 0px !important; }
 
+
 /* REMOVE IDENTITY BOX */
-#identity-box,
+/*#identity-box,*/
+#identity-icon-label,
 #tracking-protection-icon-container,
-#blocked-permissions-container {
-  display: none !important;
-}
-
-/*USE THIS ONE*/
-/*#identity-box {
-  max-width: 0px !important;
-  border-inline-end: none !important;
-  display: none !important;
-}
-
-/* #tracking-protection-icon-animatable-box {
-  max-width: 0 !important;
-  border-inline-end: none !important;
+#blocked-permissions-container, 
+#permissions-granted-icon {
   display: none !important;
 } 
 
-#tracking-protection-icon-box { 
-  max-width: 0 !important;
-  border-inline-end: none !important;
-  display: none !important;
-} */
-
-/*USE THESE 3*/
-/*#tracking-protection-icon-container {
-  max-width: 0px !important;
-  border-inline-end: none !important;
-  display: none !important;
-} 
-
-#tracking-protection-icon-container {
-  border: -0px solid transparent !important;
+/* AUTOHIDE IDENTITY BOX*/
+#identity-box {
+    opacity:0 !important;
+    margin-left: -29px !important;
+    transition: all 0.4s ease 0s !important;
 }
 
-#blocked-permissions-container {
-  Max-width: 0px !important;
-  border-inline-end: none !important;
-  display: none !important;
-} */
-
-/* AUTO HIDE IDENTITY BOX*/
-/*#identity-box{
-  max-width: 0 !important;
-  margin-left: 0px;
-	visibility: hidden;
-	transition:0s all 2s;
+#urlbar-input-container:hover > #identity-box{
+    visibility: visible !important;
+    margin-left: -29px !important;
+    transition: all 0.4s ease 0s !important;
+    opacity: 1 !important;
 }
-
-#identity-box:hover{
-  margin-left: 100px;
-	visibility: visible;
-	transition:0s all 2s;
-} */
-
 
 /* HIDE DROPMAKER BUTTON IN URL BAR */
 #pageActionButton {
@@ -312,15 +279,6 @@
 
 #reader-mode-button {
     transform: translateX(0px) !important;
-}
-
-
-/* URL BAR BORDER */
-#urlbar[focused] {
-    border: 1px solid transparent !important;
-}
-#urlbar {
-    border: 1px solid transparent !important;
 }
 
 /* URL SUGGESTIONS MINIMUM HEIGHT */
@@ -348,6 +306,8 @@ popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistit
 treechildren.searchbar-treebody::-moz-tree-row(hover) {
   background-color: #252526 !important
 }
+
+
 
 /* HOVER INDICATOR COLOR */
 .toolbarbutton-1{
@@ -394,33 +354,6 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
   top: 8px !important;
 } 
 
-/* @media (min-resolution: 110dpi) {
-	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
-	  top: 6px !important;
-	}
-}
-
-@media (min-resolution: 120dpi) {
-	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
-	  top: 5px !important;
-	}
-}
-
-@media (min-resolution: 140dpi) {
-	#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
-	  top: 0px !important;
-	}
-	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
-	  top: 4px !important;
-	}
-}
-
-@media (min-resolution: 160dpi) {
-	#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
-	  top: 2px !important;
-	}
-} */
-
 #main-window[tabsintitlebar][inFullscreen] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
   top: 0px !important;
 } 
@@ -453,32 +386,10 @@ browser[type=content] > html {
   background-color: #323234 !important;
 }
 
-/* REMOVE URL IN CORNER */
-/*statuspanel[type="overLink"] .statuspanel-label {
-  display: none !important;
-}
-statuspanel { 
-  display: none !important; 
-}
-statuspanel[type="status"] .statuspanel-label[value^="Looking"] { 
-  display: none !important; 
-}
-statuspanel[type="status"] .statuspanel-label[value^="Connect"] { 
-  display: none !important; 
-}
-statuspanel[type="status"] .statuspanel-label[value^="Waiting"] { 
-  display: none !important; 
-}
-statuspanel[type="status"] .statuspanel-label[value^="Transfer"] {
-  display: none !important; 
-} */
-
-/* Move URL IN CORNER*/
+/* MOVE POPUP URL IN CORNER*/
 #statuspanel #statuspanel-label {
     -moz-appearance: none !important;
     background-color: #1f1f1f !important;
-   /* font-family: "Fira Sans" !important;
-    font-size-adjust: inherit !important; /* size font by default */
     font-weight: thin !important;
     color: dodgerblue !important;
     border: 0px solid #1f1f1f !important;
@@ -493,21 +404,56 @@ statuspanel[type="status"] .statuspanel-label[value^="Transfer"] {
     transition: none !important;
 }
 
-/* If you're not on the latest Nightly, 
-    change the #statuspanel-inner to .statuspanel-inner 
-*/
-
 statuspanel #statuspanel-inner {
     background: transparent !important;
     border: none !important;
     height: 20px !important;
 }
 
-/* If you're not on the latest Nightly,
-    change the #statuspanel-label to .statuspanel-label
-*/
-
 statuspanel #statuspanel-label {
     background-color: transparent !important;
     border: none !important;
+}
+
+/* MEGABAR */
+/* disable ugly location bar expanding */
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: unset !important;
+  width: calc(100% + 0 * 5px + 0 * 2px) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  box-shadow: unset !important;
+  animation-name: unset !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: unset !important;
+  padding-inline: unset !important;
+}
+
+/* disable result item roundness */
+#urlbar[breakout] .urlbarView-row-inner {
+  border-radius: 0px !important;
+}
+
+/* disable 'breakout' animation */
+#urlbar[breakout] {
+  animation: unset !important;
+  duration: unset !important;
+}
+
+/* remove 'border' between urlbar and results */
+.urlbarView-body-inner {
+  border-top: 0px !important;
+}
+
+/* MEGABAR BORDER */
+#urlbar-background,
+#urlbar-container,
+.urlbar-input-box {
+border: none !important;
+
 }
