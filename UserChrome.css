@@ -1,0 +1,453 @@
+/* TITLE BAR BACKGROUND COLOR */
+:root:not(:-moz-window-inactive) #TabsToolbar {
+    background: #0c0c0d !important;
+}
+
+/* TABS */
+
+/* REMOVE SPACE BEFORE TABS */
+.titlebar-spacer[type='pre-tabs'] {
+  display: none !important;
+  width: 0px !important;
+  max-width: 0px !important;
+  border-right: 0 !important;
+}
+
+/* BOLD ACTIVE TAB TEXT */
+#TabsToolbar .tabbrowser-tab[selected] {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* ACTIVE TAB TOP LINE */
+.tab-line[selected=true] {
+  background-color: #2b2a33 !important;
+}
+
+/* ACTIVE TAB BACKGROUND COLOR */
+:root .tab-background[selected] {
+    background-color: #2b2a33 !important;
+    background-image: none !important;
+}
+
+/* INACTIVE TAB HOVER */
+.tab-background:not([selected=true]),
+.tab-line:not([selected=true]) {
+    background-color: #3232324 !important;
+}
+
+/* INACTIVE TAB TOP LINE */
+.tab-line:not([selected=true]) {
+  background-color: #252526 !important
+}
+
+/* TAB SEPARATOR REMOVED */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  border-left: none !important;
+}
+
+/* neighbouring tabs should "pinch" together / Also fixes 1px boarder on far left tab*/
+.tabbrowser-tab {
+  padding-inline: 0 !important;
+}
+
+/* 1PX BORDER ON FIRST TAB - LEFT */
+.titlebar-spacer {
+    border-right: none !important;
+}
+
+/* REDUCE SPACE ABOVE TABS */
+:root { --tab-block-margin: 0px 0 !important; } /* Default=2px */
+
+
+/* NO TAB OVERFLOW */
+.tabbrowser-tab {
+  min-width: 1em !important;
+  clip-width: 1em !important;
+}
+
+/* INACTIVE TAB 1PX LINE */
+#nav-bar {
+   box-shadow: none !important;
+}
+
+/* REMOVE PADDING ABOVE TABBAR */
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: initial !important;
+} 
+
+/* URL */
+/* REMOVE SEARCH WITH AND VISIT ITEMS */
+:is(#urlbar,.megabar) .urlbarView-row:is([type=search],[type=remotetab],[type=switchtab],[type=dynamic]),
+:is(#urlbar,.megabar) .urlbarView-row:not([has-url="true"]) {
+  display: none !important;
+}
+
+#urlbar #urlbar-results {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+:is(#urlbar,.megabar) .urlbarView-row[label] {
+  margin-block-start: 0px !important;
+}
+
+/* hide other unneeded stuff */
+.urlbarView-row[dynamicType="onboardTabToSearch"] {
+  display: none !important;
+}
+
+/* REMOVE 'SEARCH WITH GOOGLE' TEXT */
+#urlbar-input::placeholder{ 
+	color: transparent 
+}
+
+/* identity box */
+#identity-box {
+  padding-inline-start: 8px !important;
+}
+
+/* adjust icons for compact mode */
+#main-window[uidensity="compact"] .urlbar-icon {
+  padding: 2px !important;
+}
+
+/* MOVE URL TEXT INPUT */
+#urlbar-input {
+    margin-left: 10px !important;
+}
+
+/* reduce text font size in location/search bar (to what is was on Win7)*/
+#main-window[uidensity="compact"] :-moz-any(.searchbar-textbox, #urlbar) {
+  font-size: 12px !important;
+}
+
+/* REMOVE IDENTITY BOX SPACER */
+#urlbar[pageproxystate="valid"] > #identity-box.extensionPage {
+  border-image-slice: 0 !important;
+}
+
+#identity-box {
+  border-image-slice: 0 !important;
+}
+
+/* REMOVE Icons on Left of URL Bar */
+#urlbar-input-container[pageproxystate="valid"] :is(#identity-box:not(.chromeUI), #tracking-protection-icon-container) { display: none; }
+
+/* Remove Magnifying Glass Icon */
+#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] {
+  margin-inline-start: -35px;
+  opacity: 0;
+}
+/* CHANGE STAR ICON COLOR */
+#urlbar #star-button:not([starred]) {
+  fill: #9059ff !important;
+  opacity: 1.0 !important;
+}
+
+#star-button[starred] {
+    fill: #9059ff !important;
+}
+#star-button[starred][animate] + #star-button-animatable-box > #star-button-animatable-image {
+    stroke: #9059ff !important;
+    fill: #9059ff !important;
+}
+
+/* HIDE DROPMAKER BUTTON IN URL BAR */
+#pageActionButton {
+    display: none !important;
+}
+
+.urlbar-history-dropmarker {
+    display: none !important;
+}
+
+#pageActionSeparator {
+    display: none !important;
+}
+
+#reader-mode-button {
+    transform: translateX(0px) !important;
+}
+
+/* HIDE URLBAR GO BUTTON */
+#urlbar-container :-moz-any(.urlbar-go-button, #urlbar-go-button){
+  visibility: collapse !important;
+}
+
+/* URL SUGGESTIONS MINIMUM HEIGHT */
+panel#PopupAutoCompleteRichResult .autocomplete-richlistitem {
+     min-height: 20px !important;
+}
+
+/* URL AUTOCOMPLETE POPUP COLOR */
+.autocomplete-richlistitem[selected=true],
+.searchbar-treebody::-moz-tree-row(selected) {
+  background-color: #252526 !important
+}
+.autocomplete-history-popup,
+panel[type=autocomplete-richlistbox],
+panel[type=autocomplete] {
+  color: #fff !important;
+  background: #323234 !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: #323234 !important;
+  border-right: #323234 !important;
+}
+.searchbar-treebody::-moz-tree-row(hover),
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem:hover,
+treechildren.searchbar-treebody::-moz-tree-row(hover) {
+  background-color: #252526 !important
+}
+
+/* HOVER INDICATOR COLOR FOR URL RESULTS */
+.toolbarbutton-1{
+   --toolbarbutton-hover-background: #252526 !important; 
+   --toolbarbutton-active-background: #252526 !important;
+}
+
+/* HIDE BUTTON IN FULLSCREEN MODE, IF TOOLABRS GET AUTOMATICALLY HIDDEN */
+#main-window[tabsintitlebar] #navigator-toolbox[inFullscreen="true"][style*="margin-top: -"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #nav-bar  #PanelUI-button {
+  visibility: collapse !important;
+}
+ 
+/* MENU */
+/* Compact padding */
+menupopup > menuitem, menupopup > menu {
+  padding-block: 4px !important;
+}
+:root {
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+}
+
+/* MISC TWEAKS */
+/* MOVE POPUP ARROW AND POSITION */
+#appMenu-popup { /*Hamburger Menu Right */
+        margin-right: -13px !important;
+		margin-top: -1px !important;
+    }
+	
+/* REMOVE ARROW FROM PANEL POPUP */
+.panel-arrowbox {
+  visibility: collapse !important;
+}
+
+.panel-arrow{
+  display:none !important;
+}
+
+/* Makes context (right click) navigation buttons appears as normal textual menuitems */
+#context-navigation{ -moz-box-orient: vertical; flex-direction: column !important; }
+#context-navigation > menuitem > .menu-iconic-left{ display: none }
+#context-navigation > menuitem{
+  padding-block: 0.3em;
+  padding-inline-start: 1em;
+  -moz-box-pack: start !important;
+  width: auto !important;
+}
+#context-navigation > menuitem[_moz-menuactive="true"]:not([disabled]){ background-color: var(--menuitem-hover-background-color) !important; }
+#context-navigation > menuitem::before{ content: attr(aria-label) }
+#context-bookmarkpage { 
+    display: none !important 
+}
+
+/* Remove back/forward/reload/bookmark from right click */
+#context-navigation, #context-sep-navigation { 
+    display: none !important 
+}
+	
+/* MINIMIZE WHITE FLASH */
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: #323234 !important
+}
+
+#tabbrowser-tabpanels{
+  background-color: #323234 !important;
+}
+
+/* REMOVE POPUP URL IN BOTTOM CORNER*/
+#statuspanel #statuspanel-label {
+    -moz-appearance: none !important;
+    background-color: #1f1f1f !important;
+    font-weight: thin !important;
+    color: dodgerblue !important;
+    border: 0px solid #1f1f1f !important;
+}
+
+#statuspanel {
+    /*background-color: transparent !important;*/
+    border: none !important;
+    bottom: 0px !important;
+    height: 0px !important;
+    max-width: 45% !important;
+    transition: none !important;
+}
+
+statuspanel #statuspanel-inner {
+    background: transparent !important;
+    border: none !important;
+    height: 20px !important;
+}
+
+statuspanel #statuspanel-label {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* HIDE EXTENSIONS ICON */
+#unified-extensions-button{
+  width: 0.1px;
+  padding-inline: 0 !important
+}
+#unified-extensions-button > .toolbarbutton-icon{
+  width: 0 !important;
+}
+
+/* MEGABAR */
+/* disable ugly location bar expanding */
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: unset !important;
+  width: calc(100% + 0 * 5px + 0 * 2px) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  box-shadow: unset !important;
+  animation-name: unset !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: unset !important;
+  padding-inline: unset !important;
+}
+
+/* disable result item roundness */
+#urlbar[breakout] .urlbarView-row-inner {
+  border-radius: 0px !important;
+}
+
+/* disable 'breakout' animation */
+#urlbar[breakout] {
+  animation: unset !important;
+  duration: unset !important;
+}
+
+/* remove 'border' between urlbar and results */
+.urlbarView-body-inner {
+  border-top: 0px !important;
+}
+
+/* disable useless space wasting inside popup */
+#urlbar[breakout][breakout-extend] > .urlbarView {
+  padding: unset !important;
+  margin: unset !important;
+}
+
+#urlbar[breakout] .urlbarView {
+  margin-inline: unset !important;
+  width: 100% !important;
+}
+
+/* disable space wasting inside popup around result items */
+#urlbar[breakout] #urlbar-results {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+#urlbar[breakout] #urlbar-results .urlbarView-body-outer,
+#urlbar[breakout] #urlbar-results .urlbarView-row,
+#urlbar[breakout] #urlbar-results .urlbarView-row-inner {
+  -moz-margin-start: 0 !important;
+  -moz-padding-start: 0 !important;
+  -moz-margin-end: 0 !important;
+  -moz-padding-end: 0 !important;
+}
+
+#urlbar[breakout] #urlbar-results .urlbarView-row-inner {
+  -moz-padding-start: 4px !important;
+  -moz-padding-end: 4px !important;
+}
+
+#urlbar[breakout] .urlbarView-row {
+  padding-block: 0px !important;
+}
+
+/* disable space wasting inside popup around search engines */
+#urlbar[breakout] .search-one-offs {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* MEGABAR BORDER */
+#urlbar-background,
+#urlbar-container,
+.urlbar-input-box {
+border: none !important;
+}
+
+/* CHANGE TEXT INPUT SELECTION COLOR IN URLBAR */
+:-moz-any(#urlbar, #searchbar, .searchbar-textbox) ::-moz-selection {
+  background: #5a5a5c !important;
+  color: white !important;
+}
+
+/*CHANGE HIGHLIGHT TEXT IN DROPDOWN URL*/
+.urlbarView-row[selected] .urlbarView-row-inner {
+border-radius: 0px !important;
+background-color: #5a5a5c !important;
+color: white !important;
+}
+
+/*--------------            Firefox 91 Proton Tab Fix              --------------------*/
+/* ### ###    PhotonUI Sharp Tabs, Non floating    ### ### */
+@import "non_floating_sharp_tabs.css";
+
+/* DISABLE URL BORDER FATNESS */
+#nav-bar{ --toolbar-field-focus-border-color: transparent}
+
+
+/* This gets rid of the shadow, prevents the expansion of the URL bar*/
+#urlbar:focus-within > #urlbar-background {
+    box-shadow: none !important;
+    border-color: -moz-accent-color !important;
+    border-width: 1px !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+    top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+    left: 0 !important;
+    width: 100% !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    height: var(--urlbar-height) !important;
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
+}
+
+/* Source file https://teddit.net/r/FirefoxCSS/comments/oiycgx/restore_tab_separator_lines/h4yuli3/#c */
+
+/* Bring back tab separator lines that were removed in Proton */
+.tabbrowser-tab:not(:hover, [beforehovered], [selected], [last-visible-tab], [beforeselected-visible])::after {
+  content: "";
+  display: block;
+  border-left: 0px solid currentColor; /* Default=1 */
+  margin-block: 0px; /* Default=1 */
+  margin-left: -1px;
+  opacity: 0.3;
+}
+
+/* No round shapes */
+* {
+  border-radius: 0 !important;
+ }
+ 
+/* Reduce Navigation Button Spacing */
+#back-button,
+#forward-button,
+#stop-reload-button{ --toolbarbutton-inner-padding: 3px }
